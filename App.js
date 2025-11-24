@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, StatusBar as Barr } from 'react-native';
-import Index from './source/Index';
+import Index from './src/Index';
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import { ImageBackground } from 'react-native';
 
