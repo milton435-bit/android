@@ -46,7 +46,6 @@ export default function Index() {
     let maxId = Math.max(...disco.map(item => item.id));
     //agregar el nuevo dato al arreglo
     newDisco(maxId == -Infinity ? 1 : maxId + 1, force);
-    console.log(disco)
   }
 
   const handleDeletePeso = (id) => {
@@ -66,7 +65,6 @@ export default function Index() {
   const menuEdit = (id) => {
     setEditarId(id)
     setVisibleModal(true)
-    console.log(disco.map(item => item.id == id ? item.peso : ''))
   }
 
   React.useEffect(()=>{
@@ -82,7 +80,6 @@ export default function Index() {
       totalPesoLibras = totalPesoLibras + value
       totalPesoKg = totalPesoLibras / kg;
     }
-    console.log({disco, totalPesoKg});
     
     setResultado(disco.length == 0 ? '0' : totalPesoKg.toFixed(2));
 
@@ -154,7 +151,7 @@ export default function Index() {
                 contentContainerStyle={{ backgroundColor: 'white', padding: 15, margin: 5 }}
               >
 
-                <Text style={{ textAlign: 'center' }}>{disco.map(item => item.id == editarId ? item.peso : '')} LB</Text>
+                <Text style={{ textAlign: 'center'}}>{disco.map(item => item.id == editarId ? item.peso : '')} LB</Text>
 
                 <TextInput
                   label='Ingrese el nuevo peso'
@@ -177,7 +174,7 @@ export default function Index() {
         <View style={{marginTop:5, borderTopWidth: 2}}>
           <Text variant="titleLarge">Resultado</Text>
           <Text variant="bodyLarge" style={{textAlign:'center', borderRadius: 55, backgroundColor: '#494949ff', color:'white', padding:3}}>
-            {resultado}
+            {resultado} KG
           </Text>
         </View>
       </View>
